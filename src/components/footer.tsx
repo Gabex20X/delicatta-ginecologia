@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { clinic, navLinks } from "@/lib/site-data";
@@ -9,10 +10,14 @@ export function Footer() {
     <footer className="border-t border-border/70 bg-secondary/40">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
-          <p className="font-heading text-lg font-semibold text-primary">
-            {clinic.fullName}
-          </p>
-          <p className="mt-2 text-sm text-muted-foreground">
+          <Image
+            src="/delicatta-logo.png"
+            alt={clinic.fullName}
+            width={1000}
+            height={729}
+            className="h-12 w-auto"
+          />
+          <p className="mt-3 text-sm text-muted-foreground">
             {clinic.doctor.name}, {clinic.doctor.crm}
           </p>
           <p className="mt-4 text-sm text-muted-foreground">

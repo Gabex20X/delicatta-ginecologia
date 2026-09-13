@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -29,34 +30,50 @@ export default function HomePage() {
     <div>
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-4 pt-16 pb-20 sm:px-6 sm:pt-24 sm:pb-28">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="font-heading text-sm font-medium uppercase tracking-[0.2em] text-primary">
-            {clinic.fullName}
-          </p>
-          <h1 className="mt-4 font-heading text-4xl font-semibold text-balance text-foreground sm:text-5xl">
-            Ginecologia e obstetrícia com delicadeza
-          </h1>
-          <p className="mt-6 text-pretty text-lg text-muted-foreground">
-            Atendimento focado na saúde integral da paciente, não só na
-            queixa técnica. Consultas de 1 hora, com espaço para ouvir
-            alimentação, hábitos de vida, histórico familiar e o que mais
-            importa para você, em Chapecó/SC.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
-              href={whatsappLink("Olá! Gostaria de agendar uma consulta.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(buttonVariants({ size: "lg" }))}
-            >
-              Agendar pelo WhatsApp
-            </a>
-            <Link
-              href="/servicos"
-              className={cn(buttonVariants({ size: "lg", variant: "outline" }))}
-            >
-              Ver serviços
-            </Link>
+        <div className="grid gap-12 md:grid-cols-2 md:items-center">
+          <div>
+            <p className="font-heading text-sm font-medium uppercase tracking-[0.2em] text-primary">
+              {clinic.fullName}
+            </p>
+            <h1 className="mt-4 font-heading text-4xl font-semibold text-balance text-foreground sm:text-5xl">
+              Ginecologia e obstetrícia com delicadeza
+            </h1>
+            <p className="mt-6 text-pretty text-lg text-muted-foreground">
+              Atendimento focado na saúde integral da paciente, não só na
+              queixa técnica. Consultas de 1 hora, com espaço para ouvir
+              alimentação, hábitos de vida, histórico familiar e o que mais
+              importa para você, em Chapecó/SC.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={whatsappLink("Olá! Gostaria de agendar uma consulta.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(buttonVariants({ size: "lg" }))}
+              >
+                Agendar pelo WhatsApp
+              </a>
+              <Link
+                href="/servicos"
+                className={cn(
+                  buttonVariants({ size: "lg", variant: "outline" })
+                )}
+              >
+                Ver serviços
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-accent/60" />
+            <Image
+              src="/images/candice-mesa.jpg"
+              alt={clinic.doctor.name}
+              width={1920}
+              height={1280}
+              priority
+              className="aspect-[4/3] w-full rounded-3xl border border-border/70 object-cover shadow-sm"
+            />
           </div>
         </div>
 
@@ -99,15 +116,21 @@ export default function HomePage() {
               Conhecer a médica →
             </Link>
           </div>
-          <div className="rounded-2xl border border-border/70 bg-card p-8 shadow-sm">
-            <p className="font-heading text-lg text-foreground">
+          <figure>
+            <Image
+              src="/images/candice-logo-parede.jpg"
+              alt={`${clinic.doctor.name} na recepção da ${clinic.name}`}
+              width={1599}
+              height={1066}
+              className="aspect-[4/3] w-full rounded-3xl border border-border/70 object-cover shadow-sm"
+            />
+            <figcaption className="mt-4 text-sm text-muted-foreground">
               &ldquo;Cuidar da saúde integral da paciente, não olhando somente
               o exame técnico ginecológico.&rdquo;
-            </p>
-            <p className="mt-4 text-sm text-muted-foreground">
+              <br />
               {clinic.doctor.name}, {clinic.doctor.crm}
-            </p>
-          </div>
+            </figcaption>
+          </figure>
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
@@ -22,11 +23,15 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link
-          href="/"
-          className="font-heading text-xl font-semibold tracking-tight text-primary"
-        >
-          {clinic.name}
+        <Link href="/" className="flex items-center" aria-label={clinic.name}>
+          <Image
+            src="/delicatta-logo.png"
+            alt={clinic.fullName}
+            width={1000}
+            height={729}
+            priority
+            className="h-10 w-auto"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
