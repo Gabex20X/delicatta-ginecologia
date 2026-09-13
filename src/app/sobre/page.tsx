@@ -15,7 +15,7 @@ export default function SobrePage() {
     <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
       <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_320px] md:items-start">
         <div>
-          <p className="font-heading text-sm font-medium uppercase tracking-[0.2em] text-primary">
+          <p className="font-heading text-sm font-medium uppercase tracking-[0.2em] text-brand-teal">
             Sobre
           </p>
           <h1 className="mt-3 font-heading text-4xl font-semibold text-foreground">
@@ -45,7 +45,7 @@ export default function SobrePage() {
             </p>
           </div>
 
-          <div className="mt-12 rounded-2xl border border-border/70 bg-secondary/40 p-8">
+          <div className="mt-12 rounded-2xl border border-border/70 bg-accent/50 p-8">
             <h2 className="font-heading text-xl font-semibold text-foreground">
               Atendimento
             </h2>

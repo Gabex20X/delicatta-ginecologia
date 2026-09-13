@@ -75,9 +75,14 @@ export function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="w-72">
             <SheetHeader>
-              <SheetTitle className="font-heading text-primary">
-                {clinic.name}
-              </SheetTitle>
+              <SheetTitle className="sr-only">{clinic.fullName}</SheetTitle>
+              <Image
+                src="/delicatta-logo.png"
+                alt={clinic.fullName}
+                width={1000}
+                height={729}
+                className="h-9 w-auto self-start"
+              />
             </SheetHeader>
             <nav className="mt-4 flex flex-col gap-1 px-4">
               {navLinks.map((link) => (

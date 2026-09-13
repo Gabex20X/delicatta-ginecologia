@@ -18,7 +18,7 @@ export default function ContatoPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="font-heading text-sm font-medium uppercase tracking-[0.2em] text-primary">
+        <p className="font-heading text-sm font-medium uppercase tracking-[0.2em] text-brand-teal">
           Contato
         </p>
         <h1 className="mt-3 font-heading text-4xl font-semibold text-foreground">

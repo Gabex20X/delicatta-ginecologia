@@ -14,7 +14,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { clinic, faqs, services, whatsappLink } from "@/lib/site-data";
+import { Badge } from "@/components/ui/badge";
+import { clinic, faqs, featuredServices, whatsappLink } from "@/lib/site-data";
 
 const highlights = [
   { label: "Duração da consulta", value: "1 hora" },
@@ -23,8 +24,6 @@ const highlights = [
   { label: "Parto e cesariana", value: "Humanizados" },
 ];
 
-const featuredServices = services.slice(0, 6);
-
 export default function HomePage() {
   return (
     <div>
@@ -32,12 +31,15 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 pt-16 pb-20 sm:px-6 sm:pt-24 sm:pb-28">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div>
-            <p className="font-heading text-sm font-medium uppercase tracking-[0.2em] text-primary">
+            <p className="font-heading text-sm font-medium uppercase tracking-[0.2em] text-brand-teal">
               {clinic.fullName}
             </p>
             <h1 className="mt-4 font-heading text-4xl font-semibold text-balance text-foreground sm:text-5xl">
-              Ginecologia e obstetrícia com delicadeza
+              {clinic.doctor.name}
             </h1>
+            <p className="mt-3 font-heading text-xl text-primary">
+              Ginecologia e obstetrícia com delicadeza
+            </p>
             <p className="mt-6 text-pretty text-lg text-muted-foreground">
               Atendimento focado na saúde integral da paciente, não só na
               queixa técnica. Consultas de 1 hora, com espaço para ouvir
@@ -93,10 +95,10 @@ export default function HomePage() {
       </section>
 
       {/* Sobre teaser */}
-      <section className="border-y border-border/70 bg-secondary/40">
+      <section className="border-y border-border/70 bg-accent/50">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:items-center">
           <div>
-            <p className="font-heading text-sm font-medium uppercase tracking-[0.2em] text-primary">
+            <p className="font-heading text-sm font-medium uppercase tracking-[0.2em] text-brand-teal">
               Sobre a Delicatta
             </p>
             <h2 className="mt-3 font-heading text-3xl font-semibold text-foreground">
@@ -138,8 +140,8 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <p className="font-heading text-sm font-medium uppercase tracking-[0.2em] text-primary">
-              Serviços
+            <p className="font-heading text-sm font-medium uppercase tracking-[0.2em] text-brand-teal">
+              Mais procurados
             </p>
             <h2 className="mt-3 font-heading text-3xl font-semibold text-foreground">
               Cuidado em cada etapa
@@ -153,14 +155,17 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {featuredServices.map((service) => (
             <Card
               key={service.title}
-              className="border-border/70 transition-shadow [transition-timing-function:var(--ease-2)] hover:shadow-md"
+              className="border-brand-teal/40 bg-accent/40 transition-shadow [transition-timing-function:var(--ease-2)] hover:shadow-md"
             >
               <CardHeader>
-                <CardTitle className="font-heading text-lg">
+                <Badge className="w-fit bg-brand-teal text-white">
+                  Destaque
+                </Badge>
+                <CardTitle className="mt-2 font-heading text-lg">
                   {service.title}
                 </CardTitle>
               </CardHeader>
@@ -199,7 +204,7 @@ export default function HomePage() {
 
       {/* FAQ */}
       <section className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-        <p className="text-center font-heading text-sm font-medium uppercase tracking-[0.2em] text-primary">
+        <p className="text-center font-heading text-sm font-medium uppercase tracking-[0.2em] text-brand-teal">
           Dúvidas frequentes
         </p>
         <h2 className="mt-3 text-center font-heading text-3xl font-semibold text-foreground">

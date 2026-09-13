@@ -19,8 +19,8 @@ const headingFont = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: `${clinic.fullName} | ${clinic.doctor.name}`,
-    template: `%s | ${clinic.name}`,
+    default: `${clinic.doctor.name} | ${clinic.fullName}`,
+    template: `%s | ${clinic.doctor.name}`,
   },
   description:
     "Ginecologia e obstetrícia em Chapecó/SC com a Dra. Cândice Bocaccio Sperb. Atendimento acolhedor, focado na saúde integral da paciente.",

@@ -10,16 +10,19 @@ export function Footer() {
     <footer className="border-t border-border/70 bg-secondary/40">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
+          <p className="font-heading text-lg font-semibold text-primary">
+            {clinic.doctor.name}
+          </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {clinic.doctor.crm}
+          </p>
           <Image
             src="/delicatta-logo.png"
             alt={clinic.fullName}
             width={1000}
             height={729}
-            className="h-12 w-auto"
+            className="mt-4 h-8 w-auto"
           />
-          <p className="mt-3 text-sm text-muted-foreground">
-            {clinic.doctor.name}, {clinic.doctor.crm}
-          </p>
           <p className="mt-4 text-sm text-muted-foreground">
             {clinic.tagline}.
           </p>
@@ -75,8 +78,8 @@ export function Footer() {
 
       <div className="mx-auto max-w-6xl px-4 py-6 text-xs text-muted-foreground sm:px-6">
         <p>
-          © {year} {clinic.fullName}. {clinic.doctor.name},{" "}
-          {clinic.doctor.crm}.
+          © {year} {clinic.doctor.name}, {clinic.doctor.crm}.{" "}
+          {clinic.fullName}.
         </p>
       </div>
     </footer>

@@ -32,6 +32,27 @@ export function whatsappLink(message: string) {
 
 export const services = [
   {
+    title: "Laser íntimo",
+    description:
+      "Tratamento de incontinência urinária, síndrome genito-urinária pós-menopausa, clareamento íntimo e infecções recorrentes.",
+    featured: true,
+  },
+  {
+    title: "Ninfoplastia",
+    description: "Cirurgia íntima de redução dos lábios vaginais.",
+    featured: true,
+  },
+  {
+    title: "Inserção de DIU",
+    description: "Colocação de dispositivo intrauterino para contracepção.",
+    featured: true,
+  },
+  {
+    title: "Inserção de Implanon",
+    description: "Colocação de implante contraceptivo subdérmico.",
+    featured: true,
+  },
+  {
     title: "Consulta ginecológica",
     description: "Acompanhamento de rotina com coleta de preventivo.",
   },
@@ -48,25 +69,8 @@ export const services = [
     description: "Acompanhamento humanizado do parto, respeitando o tempo e as escolhas da paciente.",
   },
   {
-    title: "Laser íntimo",
-    description:
-      "Tratamento de incontinência urinária, síndrome genito-urinária pós-menopausa, clareamento íntimo e infecções recorrentes.",
-  },
-  {
-    title: "Ninfoplastia",
-    description: "Cirurgia íntima de redução dos lábios vaginais.",
-  },
-  {
     title: "Colposcopia com biópsia de colo",
     description: "Exame detalhado do colo do útero com biópsia quando necessário.",
-  },
-  {
-    title: "Inserção de DIU",
-    description: "Colocação de dispositivo intrauterino para contracepção.",
-  },
-  {
-    title: "Inserção de Implanon",
-    description: "Colocação de implante contraceptivo subdérmico.",
   },
   {
     title: "Biópsia de lesões",
@@ -81,6 +85,8 @@ export const services = [
     description: "Acompanhamento especializado no climatério e na menopausa.",
   },
 ] as const;
+
+export const featuredServices = services.filter((s) => "featured" in s && s.featured);
 
 export const faqs = [
   {
